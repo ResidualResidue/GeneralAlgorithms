@@ -1,6 +1,10 @@
 package recAlgorithms;
 
 public class MergeSort {
+	
+	/*
+	 * This is the start of the end - Call divide on the entire array
+	 */
 	public static void sort(int nums[]) {
 		divide(nums, 0, nums.length-1);
 	}
@@ -10,6 +14,10 @@ public class MergeSort {
 		if(r-l >= 1) {
 			//Finds midpoint between the two halves
 			int m = (l+r)/2;
+			/*
+			 * Repeatedly call divide until the subarray with l being the beginning and r being the last index
+			 * Once the array is of 2, call merge, and that will sort the two items into the main array.
+			 */
 			divide(nums, l, m);
 			divide(nums, m+1, r);
 			merge(nums, l, m, r);
